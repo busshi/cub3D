@@ -6,7 +6,7 @@
 #    By: aldubar <aldubar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/04 14:19:00 by aldubar           #+#    #+#              #
-#    Updated: 2021/03/09 21:54:53 by aldubar          ###   ########.fr        #
+#    Updated: 2021/10/04 17:34:34 by aldubar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,14 +65,14 @@ BONUS_OBJS	=	$(addprefix bonus/, $(SRCS:.c=.o) $(BONUS_SRCS:.c=.o))
 OK		=	[ \e[0;32mok\e[0m ]
 
 .c.o:
-		$(CC) $(CFLAGS) -I includes -I libft -I $(MLX_DIR) -c $< -o $(<:.c=.o)
+		$(CC) $(CFLAGS) -Iincludes -Ilibft -I$(MLX_DIR) -I/usr/include -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS) $(INC_DIR)/cub3d.h $(INC_DIR)/constants.h $(INC_DIR)/config.h
 		@echo "Compiling MiniLibX..."
 		@make -s -C $(MLX_DIR)
 		@echo "$(OK) MiniLibX build."
 		@make -s -C $(LIB_DIR)
-		$(CC) $(CFLAGS) $(OBJS) -lm -L$(LIB_DIR) -lft -L$(MLX_DIR) -lmlx -lXext -lX11 -o $@
+		$(CC) $(CFLAGS) $(OBJS) -lm -L$(LIB_DIR) -lft -L$(MLX_DIR) -lmlx -L/usr/lib -lXext -lX11 -o $@
 		@echo "$(OK) cub3D build ! Ready to play."
 
 all:		$(NAME)
