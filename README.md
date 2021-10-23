@@ -14,6 +14,6 @@ make bonus
 ./cub3d maps/bonus_hq.cub
 ```
 
-QSDZ to move
-SPACE to shoot
-UP ARROW to speed
+- QSDZ to move
+- SPACE to shoot
+- UP ARROW to speed
