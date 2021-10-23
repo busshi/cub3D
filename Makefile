@@ -6,7 +6,7 @@
 #    By: aldubar <aldubar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/04 14:19:00 by aldubar           #+#    #+#              #
-#    Updated: 2021/10/04 17:34:34 by aldubar          ###   ########.fr        #
+#    Updated: 2021/10/23 02:28:50 by aldubar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ INC_DIR		=	./includes
 OBJS		=	$(addprefix srcs/, $(SRCS:.c=.o))
 BONUS_OBJS	=	$(addprefix bonus/, $(SRCS:.c=.o) $(BONUS_SRCS:.c=.o))
 
-OK		=	[ \e[0;32mok\e[0m ]
+OK		=	[ \033[0;32mok\033[0m ]
 
 .c.o:
 		$(CC) $(CFLAGS) -Iincludes -Ilibft -I$(MLX_DIR) -I/usr/include -c $< -o $(<:.c=.o)
